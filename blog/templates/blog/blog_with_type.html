@@ -1,0 +1,7 @@
+{% extends 'blog/blog_list.html' %}
+{% block title %}Pete's Blog/TypeList/{{ blog_type.type_name }}{% endblock %}
+
+{% block blog_list_title %}
+Type: {{ blogs_type.type_name }}
+<a href="{% url 'blog_list' %}">Want to get all types?</a>
+{% endblock %}

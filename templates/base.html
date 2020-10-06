@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/base.css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="/static/jquery-1.12.4.min.js">"></script>
+    <script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.min.js">"></script>
+    {% block header_extends %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">Pete's Blog</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="{% block nav_home_avtive %}{% endblock %}">
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="{% block nav_blog_avtive %}{% endblock %}">
+                        <a href="{% url 'blog_list' %}">List</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+<html>
